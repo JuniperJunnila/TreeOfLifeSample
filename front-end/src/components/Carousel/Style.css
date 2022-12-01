@@ -1,0 +1,19 @@
+item {
+    color: black;
+    font-family: sans-serif;
+}
+
+.carouselStyle {
+    
+}
+
+.img-customization {
+    height: 100%;
+    width: 100%;
+}
+
+#container {
+    height: 90vh;
+    width: 90%;
+    padding: 4;
+}
