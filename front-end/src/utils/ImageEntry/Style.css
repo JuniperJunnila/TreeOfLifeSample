@@ -1,0 +1,11 @@
+.ImageEntry {
+    text-align: center;
+  }
+  .container {
+    display: block;
+    margin-top: 5rem;
+  }
+  
+  .header{
+    display: block;
+  }

@@ -1,49 +1,49 @@
 import "./Style.css";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 export default function Carousel() {
   const [images, setImages] = useState({
-    image1:
-      "https://static.wixstatic.com/media/df1e3c_3bb2bb55ab564c2a8705c383f19264bc~mv2.jpg/v1/fill/w_500,h_277,q_90/df1e3c_3bb2bb55ab564c2a8705c383f19264bc~mv2.jpg",
-    image2:
-      "https://static.wixstatic.com/media/df1e3c_d4badefc6ebc4f21b7e9b63be9b59449~mv2.jpg/v1/fill/w_478,h_280,q_90/df1e3c_d4badefc6ebc4f21b7e9b63be9b59449~mv2.jpg",
-    image3:
-      "https://static.wixstatic.com/media/df1e3c_403f8e4141124288a61f7484c3270123~mv2.jpg/v1/fill/w_478,h_280,q_90/df1e3c_403f8e4141124288a61f7484c3270123~mv2.jpg",
+    urls: {
+      image1:
+        "https://files.catbox.moe/nhfolx.png",
+      image2:
+        "https://files.catbox.moe/8u29q2.png",
+      image3:
+        "https://files.catbox.moe/cysajy.png",
+    },
+    alts: { image1: "...", image2: "...", image3: "..." },
   });
 
   if (false) setImages({ ...images });
 
   return (
-    <div
-      className="d-flex bg-dark container-fluid justify-content-center"
-      id="container"
-    >
-      <div className="carousel-inner carouselStyle" role="listbox">
+    <div className="container-fluid justify-content-center">
+      <div className="carousel-inner" role="listbox">
         <div
           id="HomepageCarousel"
           className="carousel slide"
           data-bs-ride="carousel"
         >
-          <div className="carousel-inner">
+          <div className="d-flex carousel-inner">
             <div className="carousel-item active ">
               <img
-                src={images["image1"]}
-                className="d-block w-100 img-customization"
-                alt="..."
+                src={images.urls.image1}
+                className="m-0 d-block w-100"
+                alt={images.alts.image1}
               />
             </div>
             <div className="carousel-item ">
               <img
-                src={images["image2"]}
-                className="d-block w-100 img-customization"
-                alt="..."
+                src={images.urls.image2}
+                className="m-0 d-block w-100"
+                alt={images.alts.image2}
               />
             </div>
             <div className="carousel-item ">
               <img
-                src={images["image3"]}
-                className="d-block w-100 img-customization"
-                alt="..."
+                src={images.urls.image3}
+                className="m-0 d-block w-100"
+                alt={images.alts.image3}
               />
             </div>
           </div>
