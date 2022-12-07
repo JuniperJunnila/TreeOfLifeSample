@@ -1,25 +1,22 @@
 import "./Style.css";
 
-export default function NavButtons({ navState, setNavState }) {
+export default function NavButtons({ appState, NavButtonsOn, NavButtonsOff }) {
+
   return (
     <div className="btn-group">
       <button
         className="btn btn-primary"
         type="button"
-        onClick={() => {
-          setNavState({ ...navState, adminView: false });
-        }}
-        disabled={!navState.adminView}
+        onClick={NavButtonsOff}
+        disabled={!appState.navState.adminView}
       >
         User
       </button>
       <button
         className="btn btn-primary"
         type="button"
-        onClick={() => {
-          setNavState({ ...navState, adminView: true });
-        }}
-        disabled={navState.adminView}
+        onClick={NavButtonsOn}
+        disabled={appState.navState.adminView}
       >
         Admin
       </button>

@@ -1,16 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./Style.css";
 import NavButtons from "./NavButtons/Script";
 
-export default function Navbar({ appState, setAppState }) {
-  const [navState, setNavState] = useState({ adminView: false });
-
-  useEffect(() => {
-    console.log(navState);
-    setAppState({ ...appState, navState: navState });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [navState]);
-
+export default function Navbar({ appState, NavButtonsOn, NavButtonsOff }) {
   return (
     <nav className="navbar navbar-dark navbar-bg container-fluid mt-0 pt-0">
       <div>
@@ -47,7 +39,7 @@ export default function Navbar({ appState, setAppState }) {
               <a
                 className="nav-link active"
                 aria-current="page"
-                href="/OurPhilosophy"
+                href="/our-philosophy"
               >
                 Our Philosophy
               </a>
@@ -56,7 +48,7 @@ export default function Navbar({ appState, setAppState }) {
             <li className="nav-item mx-2 dropdown">
               <a
                 className="nav-link dropdown-toggle"
-                href="/AboutUs"
+                href="/about-us"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -65,12 +57,12 @@ export default function Navbar({ appState, setAppState }) {
               </a>
               <ul className="dropdown-menu">
                 <li>
-                  <a className="dropdown-item" href="/OurCurriculum">
+                  <a className="dropdown-item" href="/our-curriculum">
                     Our Curriculum
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/OurStaff">
+                  <a className="dropdown-item" href="/our-staff">
                     Our Staff
                   </a>
                 </li>
@@ -80,7 +72,7 @@ export default function Navbar({ appState, setAppState }) {
             <li className="nav-item mx-2 dropdown">
               <a
                 className="nav-link dropdown-toggle"
-                href="/OurPrograms"
+                href="/our-programs"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -89,17 +81,17 @@ export default function Navbar({ appState, setAppState }) {
               </a>
               <ul className="dropdown-menu">
                 <li>
-                  <a className="dropdown-item" href="/GreenRoom">
+                  <a className="dropdown-item" href="/green-room">
                     Green Room (2-3 Years)
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/R+PRooms">
+                  <a className="dropdown-item" href="/red-and-purple-rooms">
                     Red & Purple Rooms (3-4 Years)
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/B+YRooms">
+                  <a className="dropdown-item" href="/blue-and-yellow-rooms">
                     Blue & Yellow Rooms (PreK)
                   </a>
                 </li>
@@ -109,7 +101,7 @@ export default function Navbar({ appState, setAppState }) {
             <li className="nav-item mx-2 dropdown">
               <a
                 className="nav-link dropdown-toggle"
-                href="/ForOurFamilies"
+                href="/for-our-families"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -118,12 +110,12 @@ export default function Navbar({ appState, setAppState }) {
               </a>
               <ul className="dropdown-menu">
                 <li>
-                  <a className="dropdown-item" href="/Forms+Info">
+                  <a className="dropdown-item" href="/forms-and-nfo">
                     Forms & Information
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/FamilyResources">
+                  <a className="dropdown-item" href="/family-resources">
                     Family Resources
                   </a>
                 </li>
@@ -134,13 +126,17 @@ export default function Navbar({ appState, setAppState }) {
               <a
                 className="nav-link active"
                 aria-current="page"
-                href="/ContactUs"
+                href="/contact-us"
               >
                 Contact Us
               </a>
             </li>
             <li className="ml-auto mx-2">
-              <NavButtons navState={navState} setNavState={setNavState} />
+              <NavButtons
+                appState={appState}
+                NavButtonsOff={NavButtonsOff}
+                NavButtonsOn={NavButtonsOn}
+              />
             </li>
           </div>
         </ul>

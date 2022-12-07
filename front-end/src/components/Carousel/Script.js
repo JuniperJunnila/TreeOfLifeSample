@@ -1,23 +1,47 @@
 import "./Style.css";
 import React, { useState } from "react";
+import CarouselEditButton from "./CarouselEditButton/Script";
 
-export default function Carousel() {
+export default function Carousel({ appState }) {
+  const adminView = appState.navState.adminView;
   const [images, setImages] = useState({
     urls: {
-      image1:
-        "https://files.catbox.moe/nhfolx.png",
-      image2:
-        "https://files.catbox.moe/8u29q2.png",
-      image3:
-        "https://files.catbox.moe/cysajy.png",
+      image1: "https://files.catbox.moe/nhfolx.png",
+      image2: "https://files.catbox.moe/8u29q2.png",
+      image3: "https://files.catbox.moe/cysajy.png",
     },
-    alts: { image1: "...", image2: "...", image3: "..." },
+    alts: { image1: "Image 1", image2: "Image 2", image3: "Image 3" },
   });
 
-  if (false) setImages({ ...images });
+  const changeImage = (urlSwap) => {
+    console.log(images);
+    console.log(urlSwap);
+    setImages({ ...images, urlSwap });
+    console.log(images);
+  };
 
   return (
     <div className="container-fluid justify-content-center">
+      <div className="btn-group">
+        <CarouselEditButton
+          adminView={adminView}
+          editNumber={"1"}
+          images={images}
+          changeImage={changeImage}
+        />
+        <CarouselEditButton
+          adminView={adminView}
+          editNumber={"2"}
+          images={images}
+          changeImage={changeImage}
+        />
+        <CarouselEditButton
+          adminView={adminView}
+          editNumber={"3"}
+          images={images}
+          changeImage={changeImage}
+        />
+      </div>
       <div className="carousel-inner" role="listbox">
         <div
           id="HomepageCarousel"

@@ -10,19 +10,19 @@ export default function Footer() {
             data-mesh-id="comp-l97k1avginlineContent-gridContainer"
             data-testid="mesh-container-content"
           >
-            <div id="comp-l97k1avp" class="_2O-Ry">
-              <ul class="xb9fU" aria-label="Social Bar">
-                <li id="dataItem-l97k1aw81-comp-l97k1avp" class="_3lu8e">
+            <div id="comp-l97k1avp" className="_2O-Ry">
+              <ul className="xb9fU" aria-label="Social Bar">
+                <li id="dataItem-l97k1aw81-comp-l97k1avp" className="_3lu8e">
                   <a
                     data-testid="linkElement"
                     href="https://www.yelp.com/biz/tree-of-life-learning-center-danville"
                     target="_blank"
                     rel="noreferrer noopener"
-                    class="_26AQd"
+                    className="_26AQd"
                   >
                     <wix-image
                       id="img_0_comp-l97k1avp"
-                      class="_1-6YJ uWpzU"
+                      className="_1-6YJ uWpzU"
                       data-image-info='{"containerId":"dataItem-l97k1aw81-comp-l97k1avp","displayMode":"fill","imageData":{"width":200,"height":200,"uri":"75193bb5368a4c358f58c3eb98c198e5.png","displayMode":"fill"}}'
                       data-has-bg-scroll-effect=""
                       data-bg-effect-name=""
@@ -39,17 +39,17 @@ export default function Footer() {
                   </a>
                 </li>
 
-                <li id="dataItem-l97k1awa-comp-l97k1avp" class="_3lu8e">
+                <li id="dataItem-l97k1awa-comp-l97k1avp" className="_3lu8e">
                   <a
                     data-testid="linkElement"
                     href="https://www.facebook.com/treeoflifelearningcenter/"
                     target="_blank"
                     rel="noreferrer noopener"
-                    class="_26AQd"
+                    className="_26AQd"
                   >
                     <wix-image
                       id="img_1_comp-l97k1avp"
-                      class="_1-6YJ uWpzU"
+                      className="_1-6YJ uWpzU"
                       data-image-info='{"containerId":"dataItem-l97k1awa-comp-l97k1avp","displayMode":"fill","imageData":{"width":200,"height":200,"uri":"0fdef751204647a3bbd7eaa2827ed4f9.png","displayMode":"fill"}}'
                       data-has-bg-scroll-effect=""
                       data-bg-effect-name=""
