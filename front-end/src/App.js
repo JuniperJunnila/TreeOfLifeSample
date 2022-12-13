@@ -1,17 +1,18 @@
 import React, { useState } from "react";
-import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar/Script";
-import Home from "./components/Home/Script";
-import "./App.css";
-import Footer from "./components/Footer/Script";
-import PageNotImplemented from "./utils/PageNotImplemented/Script";
+import AllRoutes from "./utils/Routes/Routes.js";
 
 export default function App() {
+  const UPLOAD_STATES = {
+    NONE: 0,
+    UPLOADING: 1,
+    FINISHED: 2,
+  };
+
   const initialAppState = {
     navState: { adminView: false },
     homeState: {
       para: [
-        <p>
+        <p key="para1">
           Tree of Life Learning Center is a private, family-owned,
           developmentally-based Jewish preschool. We are located across from the
           Sycamore Valley Park and Sycamore Valley Elementary School. Our school
@@ -19,7 +20,7 @@ export default function App() {
           offer full-day, part-day, and school-day programs for children ages 2
           – 5 years-old.
         </p>,
-        <p>
+        <p key="para2">
           We believe that small student-teacher ratios allow us to better meet
           the needs of the children in our care. This also allows us to support
           children that may need extra guidance, while also supporting the
@@ -33,7 +34,7 @@ export default function App() {
           work with our families to ensure that all family traditions are
           respected and valued.
         </p>,
-        <p>
+        <p key="para3">
           As a school, we value the process of learning, exploration and
           discovery. We want every child to gain a love of learning in their
           time here. We view families as a valued part of our community and a
@@ -41,94 +42,91 @@ export default function App() {
           children establish a strong sense of community and social
           responsibility.
         </p>,
-        <p>
+        <p key="para4">
           Send us an email to schedule a tour of our wonderful school!!! We look
           forward to meeting you and your beautiful children. 
         </p>,
       ],
+      carouselState: {
+        urls: {
+          image1: "https://files.catbox.moe/nhfolx.png",
+          image2: "https://files.catbox.moe/8u29q2.png",
+          image3: "https://files.catbox.moe/cysajy.png",
+        },
+        alts: { image1: "Image 1", image2: "Image 2", image3: "Image 3" },
+        heldUrls: {
+          image1: "https://files.catbox.moe/nhfolx.png",
+          image2: "https://files.catbox.moe/8u29q2.png",
+          image3: "https://files.catbox.moe/cysajy.png",
+        },
+      },
+    },
+    imageUploaderState: {
+      uploadState: UPLOAD_STATES.NONE,
+      crop: null,
+      croppedUrl: null,
     },
   };
 
   const [appState, setAppState] = useState(initialAppState);
 
-  const SetPara = (str) => {
+  const setPara = (str) => {
     const paras = str.split("\n");
     console.log(paras);
   };
 
-  const NavButtonsOn = () => {
-    setAppState({ ...appState, navState: { adminView: true } });
+  const navButtonsOnOff = (event) => {
+    event.target.id === "true"
+      ? setAppState({ ...appState, navState: { adminView: true } })
+      : setAppState({ ...appState, navState: { adminView: false } });
   };
 
-  const NavButtonsOff = () => {
-    setAppState({ ...appState, navState: { adminView: false } });
+  const editCarousel = (event) => {
+    setAppState({
+      ...appState,
+      homeState: {
+        carouselState: {
+          heldUrls: {
+            [event.target.key]: event.target.value,
+          },
+        },
+      },
+    });
+  };
+
+  const editImageUploaderState = (event) => {
+    switch (event.target.id) {
+      case "uploadState":
+        console.log(event.target.id)
+        setAppState({
+          ...appState,
+          imageUploaderState: { uploadState: event.target.id },
+        });
+        break;
+      case "crop":
+        setAppState({
+          ...appState,
+          imageUploaderState: { uploadState: event.target.id },
+        });
+        break;
+      case "croppedUrl":
+        setAppState({
+          ...appState,
+          imageUploaderState: { uploadState: event.target.id },
+        });
+        break;
+      default:
+        break;
+    }
   };
 
   return (
-    <div className="bg-info app">
-      <BrowserRouter>
-        <div className="d-flex flex-column">
-          <div className="m-0">
-            <Navbar
-              appState={appState}
-              NavButtonsOff={NavButtonsOff}
-              NavButtonsOn={NavButtonsOn}
-            />
-          </div>
-          <div className="m-0">
-            <Routes>
-              <Route
-                path=""
-                element={<Home SetPara={SetPara} appState={appState} />}
-              />
-              <Route
-                path="/our-philosophy"
-                element={<PageNotImplemented pageName={"Our Philosophy"} />}
-              />
-              <Route
-                path="/our-curriculum"
-                element={<PageNotImplemented pageName={"Our Curriculum"} />}
-              />
-              <Route
-                path="/our-staff"
-                element={<PageNotImplemented pageName={"Our Staff"} />}
-              />
-              <Route
-                path="/green-room"
-                element={<PageNotImplemented pageName={"Green Room"} />}
-              />
-              <Route
-                path="/red-and-purple-rooms"
-                element={
-                  <PageNotImplemented pageName={"Red and Purple Rooms"} />
-                }
-              />
-              <Route
-                path="/blue-and-yellow-rooms"
-                element={
-                  <PageNotImplemented pageName={"Blue and Yellow Rooms"} />
-                }
-              />
-              <Route
-                path="/forms-and-info"
-                element={<PageNotImplemented pageName={"Forms and Info"} />}
-              />
-              <Route
-                path="/family-resources"
-                element={<PageNotImplemented pageName={"Family Resources"} />}
-              />
-              <Route
-                path="/contact-us"
-                element={<PageNotImplemented pageName={"Contact Us"} />}
-              />
-            </Routes>
-          </div>
-          <div className="m-3">
-            <Footer />
-          </div>
-        </div>
-      </BrowserRouter>
-      <Outlet />
-    </div>
+    <AllRoutes
+      appState={appState}
+      setPara={setPara}
+      navButtonsOnOff={navButtonsOnOff}
+      editCarousel={editCarousel}
+      editImageUploaderState={editImageUploaderState}
+    />
   );
 }

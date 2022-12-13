@@ -1,7 +1,7 @@
 import React from "react";
-import "./Style.css";
+import "./HomeBody.css";
 
-export default function HomeBody({ SetPara, appState }) {
+export default function HomeBody({ setPara, appState }) {
   return (
     <div className="m-md-3 p-md-1 d-flex flex-column">
       <div className="m-md-0 m-lg-2 text-center rounded row bg-info">

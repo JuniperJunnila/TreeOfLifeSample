@@ -1,5 +1,5 @@
 import React from "react";
-import "./Style.css";
+import "./PageNotImplemented.css";
 
 export default function PageNotImplemented({ pageName }) {
   return (

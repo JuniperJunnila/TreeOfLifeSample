@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import "./Style.css";
-import NavButtons from "./NavButtons/Script";
+import React from "react";
+import "./Navbar.css";
+import NavButtons from "./NavButtons/NavButtons.js";
 
-export default function Navbar({ appState, NavButtonsOn, NavButtonsOff }) {
+export default function Navbar({ appState, navButtonsOnOff }) {
   return (
     <nav className="navbar navbar-dark navbar-bg container-fluid mt-0 pt-0">
       <div>
@@ -10,6 +10,7 @@ export default function Navbar({ appState, NavButtonsOn, NavButtonsOff }) {
           <img
             className="custom-logo"
             src="https://files.catbox.moe/o0rtl1.png"
+            alt="Tree of Life Banner"
           />
         </a>
         <button
@@ -134,8 +135,7 @@ export default function Navbar({ appState, NavButtonsOn, NavButtonsOff }) {
             <li className="ml-auto mx-2">
               <NavButtons
                 appState={appState}
-                NavButtonsOff={NavButtonsOff}
-                NavButtonsOn={NavButtonsOn}
+                navButtonsOnOff={navButtonsOnOff}
               />
             </li>
           </div>
