@@ -7,7 +7,7 @@ import PageNotImplemented from "../PageNotImplemented/PageNotImplemented.js";
 
 export default function AllRoutes({
   appState,
-  setPara,
+  editBody,
   navButtonsOnOff,
   editCarousel,
   editImageUploaderState,
@@ -25,7 +25,7 @@ export default function AllRoutes({
                 path=""
                 element={
                   <Home
-                    setPara={setPara}
+                    editBody={editBody}
                     appState={appState}
                     editCarousel={editCarousel}
                     editImageUploaderState={editImageUploaderState}

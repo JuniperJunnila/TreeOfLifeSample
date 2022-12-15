@@ -6,13 +6,11 @@ export default function RenderCarouselEditButton({
   appState,
   editImageUploaderState,
 }) {
-  // console.log(appState.homeState.carouselState.heldUrls);
-  const adminView = appState.navState.adminView;
-  const heldUrls = appState.homeState.carouselState.heldUrls;
-  // console.log(`Urls `);
-  // console.log(appState.homeState.carouselState.urls);
-  // console.log(`Held Urls `);
-  // console.log(appState.homeState.carouselState.heldUrls);
+  const { adminView } = appState.navState;
+  const { homeState } = appState;
+  const { carouselState } = homeState;
+  const { heldUrls, urls } = carouselState;
+
   let editButtons = [];
 
   if (false) {
@@ -34,15 +32,7 @@ export default function RenderCarouselEditButton({
   }
 
   if (adminView) {
-    Object.keys(appState.homeState.carouselState.urls).forEach(function (
-      key,
-      index
-    ) {
-      // console.log(`Key: ${key}`);
-      // console.log(`At Urls Key: ${appState.homeState.carouselState.urls[key]}`);
-      // console.log(
-      //   `At Held Urls Key: ${appState.homeState.carouselState.heldUrls[key]}`
-      // );
+    Object.keys(urls).forEach(function (key, index) {
       editButtons.push(
         <div key={key}>
           <button

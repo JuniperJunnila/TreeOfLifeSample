@@ -23,7 +23,7 @@ export default function Carousel({
           className="carousel slide"
           data-bs-ride="carousel"
         >
-          <div className="d-flex carousel-inner">
+          <div className="d-flex carousel-inner rounded">
             <RenderCarousel editCarousel={editCarousel} appState={appState} />
           </div>
         </div>

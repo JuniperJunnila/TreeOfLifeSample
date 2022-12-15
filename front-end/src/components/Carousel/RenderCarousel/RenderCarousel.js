@@ -2,7 +2,10 @@ import React from "react";
 
 export default function RenderCarousel({ appState }) {
   const carouselElements = [];
-  Object.keys(appState.homeState.carouselState.urls).forEach(function (
+  const { homeState } = appState;
+  const { carouselState = {} } = homeState;
+  const { urls = [] } = carouselState;
+  Object.keys(urls).forEach(function (
     key,
     index
   ) {

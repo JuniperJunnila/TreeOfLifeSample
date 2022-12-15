@@ -1,75 +1,80 @@
 import "./Footer.css";
 import React from "react";
+import { Facebook, Yelp, Google } from "react-bootstrap-icons";
 
 export default function Footer() {
   return (
-    <div className="container-fluid">
-      <div className="m-3">
-        <footer>
-          <div
-            data-mesh-id="comp-l97k1avginlineContent-gridContainer"
-            data-testid="mesh-container-content"
+    <footer className="bg-info text-center">
+      <div className="container-fluid">
+        <section className="mb-4 row justify-content-center">
+          <a
+            className="col-1 btn"
+            href="https://www.facebook.com/treeoflifelearningcenter/"
           >
-            <div id="comp-l97k1avp" className="_2O-Ry">
-              <ul className="xb9fU" aria-label="Social Bar">
-                <li id="dataItem-l97k1aw81-comp-l97k1avp" className="_3lu8e">
-                  <a
-                    data-testid="linkElement"
-                    href="https://www.yelp.com/biz/tree-of-life-learning-center-danville"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="_26AQd"
-                  >
-                    <wix-image
-                      id="img_0_comp-l97k1avp"
-                      className="_1-6YJ uWpzU"
-                      data-image-info='{"containerId":"dataItem-l97k1aw81-comp-l97k1avp","displayMode":"fill","imageData":{"width":200,"height":200,"uri":"75193bb5368a4c358f58c3eb98c198e5.png","displayMode":"fill"}}'
-                      data-has-bg-scroll-effect=""
-                      data-bg-effect-name=""
-                      data-has-ssr-src=""
-                      data-src="https://static.wixstatic.com/media/75193bb5368a4c358f58c3eb98c198e5.png/v1/fill/w_50,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/75193bb5368a4c358f58c3eb98c198e5.png"
-                    >
-                      <img
-                        alt=""
-                        className="socials"
-                        fetchpriority="high"
-                        src="https://static.wixstatic.com/media/75193bb5368a4c358f58c3eb98c198e5.png/v1/fill/w_50,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/75193bb5368a4c358f58c3eb98c198e5.png"
-                      />
-                    </wix-image>
-                  </a>
-                </li>
+            <Facebook color="#3b5998" />
+          </a>
+          <a
+            className="col-1 btn"
+            href="https://www.yelp.com/biz/tree-of-life-learning-center-danville"
+          >
+            <Yelp color="#c41200" />
+          </a>
+          <a
+            className="col-1 btn"
+            href="https://www.google.com/maps/place/Tree+of+Life+Learning+Center/@37.8060302,-121.9441375,15z/data=!4m5!3m4!1s0x0:0xdd462ee6087b0153!8m2!3d37.806144!4d-121.944375"
+          >
+            <Google color="#dd4b39" />
+          </a>
+          {/* <a className="col-1 btn" href="">
+            <Instagram color="#ac2bac" />
+          </a> */}
+          <a
+            className="col-1 btn"
+            href="https://www.berkeleyparentsnetwork.org/recommend/preschool/tree-life-learning-center"
+          >
+            <img
+              className="parents-of-berkeley"
+              src="https://www.berkeleyparentsnetwork.org/sites/all/themes/bpn/logo.svg"
+              alt="berkeley parents network"
+            />
+          </a>
+        </section>
 
-                <li id="dataItem-l97k1awa-comp-l97k1avp" className="_3lu8e">
-                  <a
-                    data-testid="linkElement"
-                    href="https://www.facebook.com/treeoflifelearningcenter/"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="_26AQd"
-                  >
-                    <wix-image
-                      id="img_1_comp-l97k1avp"
-                      className="_1-6YJ uWpzU"
-                      data-image-info='{"containerId":"dataItem-l97k1awa-comp-l97k1avp","displayMode":"fill","imageData":{"width":200,"height":200,"uri":"0fdef751204647a3bbd7eaa2827ed4f9.png","displayMode":"fill"}}'
-                      data-has-bg-scroll-effect=""
-                      data-bg-effect-name=""
-                      data-has-ssr-src=""
-                      data-src="https://static.wixstatic.com/media/0fdef751204647a3bbd7eaa2827ed4f9.png/v1/fill/w_50,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/0fdef751204647a3bbd7eaa2827ed4f9.png"
-                    >
-                      <img
-                        alt="Facebook"
-                        className="socials"
-                        fetchpriority="high"
-                        src="https://static.wixstatic.com/media/0fdef751204647a3bbd7eaa2827ed4f9.png/v1/fill/w_50,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/0fdef751204647a3bbd7eaa2827ed4f9.png"
-                      />
-                    </wix-image>
-                  </a>
-                </li>
-              </ul>
+        {/* Section: Text */}
+        <section className="mb-4 row justify-content-center">
+          <div className="col-8">
+            <div className="row">
+              <div className="col">
+                <h6 className="fw-bold">Administrative Director</h6>
+                <p>Kelley Cohen</p>
+              </div>
+              <div className="col">
+                <h6 className="fw-bold">Director/Teacher</h6>
+                <p>Kerri White</p>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <h6 className="fw-bold">Loacted at</h6>
+                <a
+                  className="link-light"
+                  href="https://www.google.com/maps/place/Tree+of+Life+Learning+Center/@37.8060302,-121.9441375,15z/data=!4m5!3m4!1s0x0:0xdd462ee6087b0153!8m2!3d37.806144!4d-121.944375"
+                >
+                  <p>1800 Holbrook Drive, Danville,​California 94506</p>
+                </a>
+              </div>
+              <div className="col">
+                <h6 className="fw-bold">Email us at</h6>
+                <a className="link-light" href="mailto:mskerri.treeoflife@yahoo.com">
+                  <p>mskerri.treeoflife@yahoo.com</p>
+                </a>
+              </div>
             </div>
           </div>
-        </footer>
+        </section>
+        {/* Section: Text */}
       </div>
-    </div>
+      {/* Grid container */}
+    </footer>
   );
 }
