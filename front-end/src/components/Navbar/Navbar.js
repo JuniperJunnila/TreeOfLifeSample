@@ -1,44 +1,69 @@
 import React from "react";
 import "./Navbar.css";
 import NavButtons from "./NavButtons/NavButtons.js";
+import bootstrapStyles from "../../utils/BootstrapStyles/BootstrapStyles";
+
+const { navBar } = bootstrapStyles;
+const {
+  nav,
+  brand,
+  logo,
+  toggle,
+  toggleIcon,
+  navbarSupportedContent,
+  list,
+  listContainer,
+  listItem,
+  llinkActive,
+  dropdown,
+  dropdownToggle,
+  dropdownMenu,
+  dropdownItem,
+  buttons,
+} = navBar;
 
 export default function Navbar({ appState, navButtonsOnOff }) {
   return (
-    <nav className="navbar navbar-dark navbar-bg container-fluid mt-0 pt-0">
+    <nav className={nav} id="nav">
       <div>
-        <a className="navbar-brand" href="/">
+        <a className={brand} id="brand" href="/">
           <img
-            className="custom-logo"
+            className={logo}
+            id="logo"
             src="https://files.catbox.moe/o0rtl1.png"
             alt="Tree of Life Banner"
           />
         </a>
         <button
-          className="navbar-toggler m-3"
+          className={toggle}
+          id="toggle"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span className={toggleIcon} id="toggleIcon"></span>
         </button>
       </div>
-      <div
-        className="collapse navbar-collapse navbar-expand-md"
-        id="navbarSupportedContent"
-      >
-        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-          <div className="container-fluid d-flex flex-column flex-md-row justify-content-start">
-            <li className="nav-item mx-2">
-              <a className="nav-link active" aria-current="page" href="/">
+      <div className={navbarSupportedContent} id="navbarSupportedContent">
+        <ul className={list} id="list">
+          <div className={listContainer} id="listContainer">
+            <li className={listItem} id="listItem">
+              <a
+                className={llinkActive}
+                id="llinkActive"
+                aria-current="page"
+                href="/"
+              >
                 Welcome
               </a>
             </li>
 
-            <li className="nav-item mx-2">
+            <li className={listItem} id="listItem">
               <a
-                className="nav-link active"
+                className={llinkActive}
+                id="llinkActive"
                 aria-current="page"
                 href="/our-philosophy"
               >
@@ -46,9 +71,10 @@ export default function Navbar({ appState, navButtonsOnOff }) {
               </a>
             </li>
 
-            <li className="nav-item mx-2 dropdown">
+            <li className={dropdown} id="dropdown">
               <a
-                className="nav-link dropdown-toggle"
+                className={dropdownToggle}
+                id="dropdownToggle"
                 href="/about-us"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -56,23 +82,32 @@ export default function Navbar({ appState, navButtonsOnOff }) {
               >
                 About Us
               </a>
-              <ul className="dropdown-menu">
+              <ul className={dropdownMenu} id="dropdownMenu">
                 <li>
-                  <a className="dropdown-item" href="/our-curriculum">
+                  <a
+                    className={dropdownItem}
+                    id="dropdownItem"
+                    href="/our-curriculum"
+                  >
                     Our Curriculum
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/our-staff">
+                  <a
+                    className={dropdownItem}
+                    id="dropdownItem"
+                    href="/our-staff"
+                  >
                     Our Staff
                   </a>
                 </li>
               </ul>
             </li>
 
-            <li className="nav-item mx-2 dropdown">
+            <li className={dropdown} id="dropdown">
               <a
-                className="nav-link dropdown-toggle"
+                className={dropdownToggle}
+                id="dropdownToggle"
                 href="/our-programs"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -80,28 +115,41 @@ export default function Navbar({ appState, navButtonsOnOff }) {
               >
                 Our Programs
               </a>
-              <ul className="dropdown-menu">
+              <ul className={dropdownMenu} id="dropdownMenu">
                 <li>
-                  <a className="dropdown-item" href="/green-room">
+                  <a
+                    className={dropdownItem}
+                    id="dropdownItem"
+                    href="/green-room"
+                  >
                     Green Room (2-3 Years)
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/red-and-purple-rooms">
+                  <a
+                    className={dropdownItem}
+                    id="dropdownItem"
+                    href="/red-and-purple-rooms"
+                  >
                     Red & Purple Rooms (3-4 Years)
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/blue-and-yellow-rooms">
+                  <a
+                    className={dropdownItem}
+                    id="dropdownItem"
+                    href="/blue-and-yellow-rooms"
+                  >
                     Blue & Yellow Rooms (PreK)
                   </a>
                 </li>
               </ul>
             </li>
 
-            <li className="nav-item mx-2 dropdown">
+            <li className={dropdown} id="dropdown">
               <a
-                className="nav-link dropdown-toggle"
+                className={dropdownToggle}
+                id="dropdownToggle"
                 href="/for-our-families"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -109,30 +157,39 @@ export default function Navbar({ appState, navButtonsOnOff }) {
               >
                 For Our Families
               </a>
-              <ul className="dropdown-menu">
+              <ul className={dropdownMenu} id="dropdownMenu">
                 <li>
-                  <a className="dropdown-item" href="/forms-and-nfo">
+                  <a
+                    className={dropdownItem}
+                    id="dropdownItem"
+                    href="/forms-and-nfo"
+                  >
                     Forms & Information
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/family-resources">
+                  <a
+                    className={dropdownItem}
+                    id="dropdownItem"
+                    href="/family-resources"
+                  >
                     Family Resources
                   </a>
                 </li>
               </ul>
             </li>
 
-            <li className="nav-item mx-2">
+            <li className={listItem} id="listItem">
               <a
-                className="nav-link active"
+                className={llinkActive}
+                id="llinkActive"
                 aria-current="page"
                 href="/contact-us"
               >
                 Contact Us
               </a>
             </li>
-            <li className="ml-auto mx-2">
+            <li className={buttons} id="buttons">
               <NavButtons
                 appState={appState}
                 navButtonsOnOff={navButtonsOnOff}

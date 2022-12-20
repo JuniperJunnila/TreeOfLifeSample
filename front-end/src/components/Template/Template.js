@@ -1,10 +1,13 @@
 import React from "react";
-import "./Style.css";
+
+const temp = { tempName1: "container-fluid", tempName2: "m-3" };
 
 export default function Component1() {
   return (
-    <div className="container-fluid">
-      <div className="m-3">{/* content */}</div>
+    <div className={tempName1} id="tempName1">
+      <div className={tempName2} id="tempName2">
+        {/* content */}
+      </div>
     </div>
   );
 }

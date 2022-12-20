@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import AllRoutes from "./utils/Routes/Routes.js";
+import bootstrapStyles from "./utils/BootstrapStyles/BootstrapStyles.js";
+const { app } = bootstrapStyles;
+const { cards, button, round, tours, pleaseEmail, editButton } = app;
 
 export default function App() {
   // const UPLOAD_STATES = {
@@ -61,13 +64,10 @@ export default function App() {
             </p>,
           ],
           cards: [
-            <div
-              className="shadow-sm bg-white rounded row mb-3"
-              key="enrolling"
-            >
+            <div className={cards} id="cards" key="enrolling">
               <button
                 id="button"
-                className="btn btn-primary btn-block"
+                className={button}
                 to="#"
                 onClick={(e) => {
                   window.location.href = "/contact-us";
@@ -76,16 +76,18 @@ export default function App() {
               >
                 Enrolling
               </button>
-              <h4 className="rounded">We are enrolling!</h4>
-              <p className="rounded">
+              <h4 className={round} id="round">
+                We are enrolling!
+              </h4>
+              <p className={round} id="round">
                 Our preschool is licensed for children between the ages of 2-5.
                 If you're interested, please contact us to schedule a tour!
               </p>
             </div>,
-            <div className="shadow-sm bg-white rounded row" key="tours">
+            <div className={tours} id="tours" key="tours">
               <button
                 id="button"
-                className="btn btn-primary btn-block"
+                className={button}
                 to="#"
                 onClick={(e) => {
                   window.location.href = "mailto: mskerri.treeoflife@yahoo.com";
@@ -94,10 +96,15 @@ export default function App() {
               >
                 Tours
               </button>
-              <h4 className="rounded">Tours are available by appointment.</h4>
-              <p className="text-center rounded">please email</p>
+              <h4 className={round} id="round">
+                Tours are available by appointment.
+              </h4>
+              <p className={pleaseEmail} id="pleaseEmail">
+                please email
+              </p>
               <a
-                className="text-center rounded"
+                className={pleaseEmail}
+                id="pleaseEmail"
                 href="mailto: mskerri.treeoflife@yahoo.com"
               >
                 mskerri.treeoflife@yahoo.com
@@ -106,28 +113,28 @@ export default function App() {
           ],
           editButtons: [
             <button
-              className="btn btn-primary border border-dark"
+              className={editButton}
               type="button"
               key="edit-paragraphs"
-              id="edit-paragraphs"
+              id="editButton"
               onClick={toggleToggle}
             >
               Edit Body Text
             </button>,
             <button
-              className="btn btn-primary border border-dark"
+              className={editButton}
               type="button"
               key="edit-enrolling"
-              id="edit-enrolling"
+              id="editButton"
               onClick={toggleToggle}
             >
               Edit Enrolling Text
             </button>,
             <button
-              className="btn btn-primary border border-dark"
+              className={editButton}
               type="button"
               key="edit-tours"
-              id="edit-tours"
+              id="editButton"
               onClick={toggleToggle}
             >
               Edit Tours Text

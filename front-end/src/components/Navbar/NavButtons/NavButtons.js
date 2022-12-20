@@ -1,10 +1,13 @@
+import bootstrapStyles from "../../../utils/BootstrapStyles/BootstrapStyles";
 
+const { navButtons } = bootstrapStyles;
+const { group, button } = navButtons;
 
 export default function NavButtons({ appState, navButtonsOnOff }) {
   return (
-    <div className="btn-group">
+    <div className={group} id="group">
       <button
-        className="btn btn-primary"
+        className={button}
         type="button"
         id="false"
         onClick={navButtonsOnOff}
@@ -13,7 +16,7 @@ export default function NavButtons({ appState, navButtonsOnOff }) {
         User
       </button>
       <button
-        className="btn btn-primary"
+        className={button}
         type="button"
         id="true"
         onClick={navButtonsOnOff}

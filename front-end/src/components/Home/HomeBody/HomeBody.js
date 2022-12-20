@@ -1,5 +1,9 @@
 import React from "react";
-import "./HomeBody.css";
+import { Row } from "react-bootstrap";
+import bootstrapStyles from "../../../utils/BootstrapStyles/BootstrapStyles";
+
+const { homeBody } = bootstrapStyles;
+const { wrapper, h1Wrap, h1, p, cardsWrap } = homeBody;
 
 export default function HomeBody({ appState }) {
   const { adminView } = appState.navState;
@@ -23,17 +27,19 @@ export default function HomeBody({ appState }) {
   renderCards();
 
   return (
-    <div className="m-md-3 p-md-1 d-flex flex-column text-dark">
-      <div className="m-md-0 m-lg-2 text-center rounded row bg-info">
-        <h1 className="p-md-3 font-weight-bold text-md-start">Welcome</h1>
+    <div className={wrapper} id="wrapper">
+      <div className={h1Wrap} id="h1Wrap">
+        <h1 className={h1} id="h1">
+          Welcome
+        </h1>
       </div>
-      <div className="row ">
-        <div className="m-3 col col-lg-8 col-md-11 text-dark">
+      <Row>
+        <p className={p} id="p">
           {adminView ? editButtons[0] : null}
           {body.para}
-        </div>
-        <div className="m-4 rounded col text-center">{currentCards}</div>
-      </div>
+        </p>
+        <div className={cardsWrap} id="cardsWrap">{currentCards}</div>
+      </Row>
     </div>
   );
 }

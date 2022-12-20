@@ -2,6 +2,20 @@ import "./Carousel.css";
 import React from "react";
 import RenderCarouselEditButton from "./RenderCarouselEditButton/RenderCarouselEditButton.js";
 import RenderCarousel from "./RenderCarousel/RenderCarousel.js";
+import bootstrapStyles from "../../utils/BootstrapStyles/BootstrapStyles";
+
+const { carousel } = bootstrapStyles;
+const {
+  wrapper,
+  inner,
+  homepageCarousel,
+  innerRound,
+  buttonPrev,
+  prevIcon,
+  hidden,
+  buttonNext,
+  nextIcon,
+} = carousel;
 
 export default function Carousel({
   appState,
@@ -9,47 +23,47 @@ export default function Carousel({
   editImageUploaderState,
 }) {
   return (
-    <div className="container-fluid justify-content-center">
-      <div className="btn-group container-fluid justify-content-center w-100">
+    <div className={wrapper} id="wrapper">
+      <div className={wrapper} id="wrapper">
         <RenderCarouselEditButton
           editCarousel={editCarousel}
           appState={appState}
           editImageUploaderState={editImageUploaderState}
         />
       </div>
-      <div className="carousel-inner" role="listbox">
+      <div className={inner} id="inner" role="listbox">
         <div
-          id="HomepageCarousel"
-          className="carousel slide"
+          id="homepageCarousel"
+          className={homepageCarousel}
           data-bs-ride="carousel"
         >
-          <div className="d-flex carousel-inner rounded">
+          <div className={innerRound} id="innerRound">
             <RenderCarousel editCarousel={editCarousel} appState={appState} />
           </div>
         </div>
         <button
-          className="carousel-control-prev"
+          className={buttonPrev}
+          id="buttonPrev"
           type="button"
-          data-bs-target="#HomepageCarousel"
+          data-bs-target="#homepageCarousel"
           data-bs-slide="prev"
         >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Previous</span>
+          <span className={prevIcon} id="prevIcon" aria-hidden="true"></span>
+          <span className={hidden} id="hidden">
+            Previous
+          </span>
         </button>
         <button
-          className="carousel-control-next"
+          className={buttonNext}
+          id="buttonNext"
           type="button"
-          data-bs-target="#HomepageCarousel"
+          data-bs-target="#homepageCarousel"
           data-bs-slide="next"
         >
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Next</span>
+          <span className={nextIcon} id="nextIcon" aria-hidden="true"></span>
+          <span className={hidden} id="hidden">
+            Next
+          </span>
         </button>
       </div>
     </div>

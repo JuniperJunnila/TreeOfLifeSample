@@ -1,9 +1,12 @@
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar.js";
 import Home from "../../components/Home/Home.js";
-import "./Routes.css";
 import Footer from "../../components/Footer/Footer.js";
 import PageNotImplemented from "../PageNotImplemented/PageNotImplemented.js";
+import bootstrapStyles from "../BootstrapStyles/BootstrapStyles.js";
+
+const { routes } = bootstrapStyles;
+const { allRoutes, browserRouter, routeDivs, footer } = routes;
 
 export default function AllRoutes({
   appState,
@@ -13,13 +16,13 @@ export default function AllRoutes({
   editImageUploaderState,
 }) {
   return (
-    <div className="bg-info app">
+    <div className={allRoutes} id="allRoutes">
       <BrowserRouter>
-        <div className="d-flex flex-column">
-          <div className="m-0">
+        <div className={browserRouter} id="browserRouter">
+          <div className={routeDivs} id="routeDivs">
             <Navbar appState={appState} navButtonsOnOff={navButtonsOnOff} />
           </div>
-          <div className="m-0">
+          <div className={routeDivs} id="routeDivs">
             <Routes>
               <Route
                 path=""
@@ -74,7 +77,7 @@ export default function AllRoutes({
               />
             </Routes>
           </div>
-          <div className="m-3">
+          <div className={footer} id="footer">
             <Footer />
           </div>
         </div>
